@@ -10,8 +10,19 @@
     --fg-dark-tertiary: #DBDBDB;
 
     --border-dark-color: #AFAFAF;
+    --slider-border-dark-color: #7F7F7F;
 
     --sidebar-dark-bg-color: #2F2F2F;
 
     --primary-color: #0088DD;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
 }
