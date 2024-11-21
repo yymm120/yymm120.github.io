@@ -1,8 +1,23 @@
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/es/highlight.min.js";
-import typescript from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/es/languages/typescript.min.js";
+import { Marked } from "marked";
+import { markedHighlight } from "marked-highlight";
+import hljs from "highlight.js"
+import "../normalize.css";
+import "../global.css";
+import "./index.css";
+import 'highlight.js/styles/github.css';
 
 let utf8decoder = new TextDecoder();
+
+const marked = new Marked(
+  markedHighlight({
+	emptyLangClass: 'hljs',
+    langPrefix: 'hljs language-',
+    highlight(code, lang, info) {
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+      return hljs.highlight(code, { language }).value;
+    }
+  })
+);
 
 // 定时读取post路径下的markdown文件, 如果有修改的, 就重新将最新版本输出为html
 fetch("http://127.0.0.1:5500/blog/post/one.md")
@@ -13,12 +28,6 @@ fetch("http://127.0.0.1:5500/blog/post/one.md")
   .then((data) => {
     let mdText = utf8decoder.decode(data.value);
 
-    // hljs.highlightAll();
-    marked.setOptions({
-      highlight: function (code, lang) {
-        return hljs.highlight(code, {language: lang}).value;
-      },
-    });
     document.getElementById("content").innerHTML = marked.parse(mdText);
   });
 

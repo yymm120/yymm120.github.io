@@ -1,0 +1,27 @@
+{
+  "name": "yymm120.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "highlight.js": "^11.10.0",
+    "marked": "^15.0.2",
+    "marked-highlight": "^2.2.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "install": "^0.13.0",
+    "rollup": "^4.27.3",
+    "rollup-plugin-css-only": "^4.5.2"
+  }
+}
