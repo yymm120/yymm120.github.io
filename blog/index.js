@@ -1,4 +1,6 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+import hljs from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/es/highlight.min.js";
+import typescript from "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/es/languages/typescript.min.js";
 
 let utf8decoder = new TextDecoder();
 
@@ -10,6 +12,13 @@ fetch("http://127.0.0.1:5500/blog/post/one.md")
   })
   .then((data) => {
     let mdText = utf8decoder.decode(data.value);
+
+    // hljs.highlightAll();
+    marked.setOptions({
+      highlight: function (code, lang) {
+        return hljs.highlight(code, {language: lang}).value;
+      },
+    });
     document.getElementById("content").innerHTML = marked.parse(mdText);
   });
 
@@ -23,7 +32,6 @@ const updatePosts = () => {
   // 更新目录
 };
 
-
 // fetch("http://127.0.0.1:5500/blog/post")
 //   .then((response) => {
 //     const s = response.body.getReader().read()
@@ -32,12 +40,10 @@ const updatePosts = () => {
 //     console.log(utf8decoder.decode(data.value));
 //   })
 
-
-
-const buttons = document.querySelectorAll("#left-section4 > ul > li > a")
-buttons.forEach(item => {
-    console.log(item.textContent)
-    item.addEventListener("click", () => {
-        // 更换center中的content
-    })
-})
+const buttons = document.querySelectorAll("#left-section4 > ul > li > a");
+buttons.forEach((item) => {
+  console.log(item.textContent);
+  item.addEventListener("click", () => {
+    // 更换center中的content
+  });
+});
