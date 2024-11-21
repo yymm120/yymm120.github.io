@@ -1,0 +1,17 @@
+
+:root{
+    --bg-dark-primary: #1F1F1F;
+    --fg-dark-primary: #F1F1F1;
+
+    --bg-dark-second: #2F2F2F;
+    --fg-dark-second: #EEEEEE;
+
+    --bg-dark-tertiary: #3F3F3F;
+    --fg-dark-tertiary: #DBDBDB;
+
+    --border-dark-color: #AFAFAF;
+
+    --sidebar-dark-bg-color: #2F2F2F;
+
+    --primary-color: #0088DD;
+}
