@@ -7,23 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^28.0.1
         version: 28.0.1(rollup@4.27.3)
-      highlight.js:
-        specifier: ^11.10.0
-        version: 11.10.0
-      marked:
-        specifier: ^15.0.2
-        version: 15.0.2
-      marked-highlight:
-        specifier: ^2.2.1
-        version: 2.2.1(marked@15.0.2)
-      parse5:
-        specifier: ^7.2.1
-        version: 7.2.1
-    devDependencies:
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.27.3)
@@ -33,9 +20,21 @@ importers:
       '@rollup/plugin-terser':
         specifier: ^0.4.4
         version: 0.4.4(rollup@4.27.3)
+      highlight.js:
+        specifier: ^11.10.0
+        version: 11.10.0
       install:
         specifier: ^0.13.0
         version: 0.13.0
+      marked:
+        specifier: ^15.0.2
+        version: 15.0.2
+      marked-highlight:
+        specifier: ^2.2.1
+        version: 2.2.1(marked@15.0.2)
+      parse5:
+        specifier: ^7.2.1
+        version: 7.2.1
       rollup:
         specifier: ^4.27.3
         version: 4.27.3

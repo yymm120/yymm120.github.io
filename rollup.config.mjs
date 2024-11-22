@@ -103,21 +103,26 @@ const writeResult = (dataMap) => {
         }
     }
 
-    const indexResult = defaultTreeAdapter.createDocumentFragment();
-    // 创建<li><button>文件名</button></li>, 然后放入ul中
+
+    // 创建<li><a>文件名</a></li>, 然后放入ul中
+    [...dataMap].forEach(({key}) => {
+        const li = defaultTreeAdapter.createElement("li", html.NS.HTML, [])
+        const a = defaultTreeAdapter.createElement("a", html.NS.HTML, [{ name: "href", value : `/blog/post/${key.replaceAll(".md", "")}.html`}])
+        const text = defaultTreeAdapter.createTextNode(`${key.replaceAll(".md", "")}`)
+        defaultTreeAdapter.appendChild(a, text);
+        defaultTreeAdapter.appendChild(li, a);
+        defaultTreeAdapter.appendChild(ul, li);
+    })
+
+    const rootSerializeResout = serialize(htmlRoot);
+    fs.writeFileSync(path.posix.join(__dirname, "blog", "index.html"), rootSerializeResout);
+
     ul.childNodes = [];
     [...dataMap].forEach(({key, value}) => {
         const fileName = key.replaceAll(".md", ".html");
-        const li = defaultTreeAdapter.createElement("li", html.NS.HTML, [])
-        const button = defaultTreeAdapter.createElement("button", html.NS.HTML, [{ name: "data-post-id", value: `${key.replaceAll(".md", "")}`}])
-        const text = defaultTreeAdapter.createTextNode(`${key.replaceAll(".md", "")}`)
-        defaultTreeAdapter.appendChild(button, text);
-        defaultTreeAdapter.appendChild(li, button);
-        defaultTreeAdapter.appendChild(ul, li);
-        defaultTreeAdapter.appendChild(indexResult, htmlRoot);
         // 每次循环都重新序列化一次, (深拷贝)
-        const serializeResult = serialize(htmlRoot);
-        const postHtmlRoot = parse(serializeResult);
+        // const postSerializeResult = serialize(rootSerializeResout);
+        const postHtmlRoot = parse(rootSerializeResout);
         const content = queryElementById(postHtmlRoot, "content");
         const valueHtmlNode = parseFragment(value);
         // console.log(postHtmlRoot.childNodes[1].childNodes[2].childNodes[1].childNodes[3].childNodes[1]); // 查看#content节点
@@ -126,9 +131,8 @@ const writeResult = (dataMap) => {
         })
         const temp = serialize(postHtmlRoot);
         fs.writeFileSync(path.posix.join(__dirname, "blog/post", fileName), temp);
-    })
+    });
 
-    fs.writeFileSync(path.posix.join(__dirname, "blog", "index.html"), serialize(htmlRoot));
 }
 const dataMap = parseMarkdown(readMarkdown())
 writeResult(dataMap)
