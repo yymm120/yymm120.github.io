@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./bundle.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="left">
+        <div id="left-section1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M3 8V7h17v1zm17 4v1H3v-1zM3 17h17v1H3z"></path>
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 7H18C18.2652 7 18.5196 7.10536 18.7071 7.29289C18.8946 7.48043 19 7.73478 19 8V16C19 16.2652 18.8946 16.5196 18.7071 16.7071C18.5196 16.8946 18.2652 17 18 17H10V7ZM9 7H6C5.73478 7 5.48043 7.10536 5.29289 7.29289C5.10536 7.48043 5 7.73478 5 8V16C5 16.2652 5.10536 16.5196 5.29289 16.7071C5.48043 16.8946 5.73478 17 6 17H9V7ZM4 8C4 7.46957 4.21071 6.96086 4.58579 6.58579C4.96086 6.21071 5.46957 6 6 6H18C18.5304 6 19.0391 6.21071 19.4142 6.58579C19.7893 6.96086 20 7.46957 20 8V16C20 16.5304 19.7893 17.0391 19.4142 17.4142C19.0391 17.7893 18.5304 18 18 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V8Z" fill="white"></path>
+          </svg>
+        </div>
+        <div id="left-section2">
+          <h4>鸿蒙文档v12 笔记</h4>
+          <span>最近更新: 2024.11.19</span>
+        </div>
+        <div id="left-section3">
+          <div class="search">
+            <input value="" placeholder="Search">
+            <button>
+              <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5C15 11.091 14.8836 11.6761 14.6574 12.2221C14.4313 12.768 14.0998 13.2641 13.682 13.682C13.2641 14.0999 12.768 14.4313 12.2221 14.6575C11.6761 14.8836 11.0909 15 10.5 15C9.90903 15 9.32387 14.8836 8.7779 14.6575C8.23194 14.4313 7.73586 14.0999 7.318 13.682C6.90013 13.2641 6.56867 12.768 6.34252 12.2221C6.11637 11.6761 5.99998 11.091 5.99998 10.5C5.99998 9.30653 6.47408 8.16194 7.318 7.31803C8.16191 6.47411 9.3065 6.00001 10.5 6.00001C11.6935 6.00001 12.838 6.47411 13.682 7.31803C14.5259 8.16194 15 9.30653 15 10.5ZM14.044 14.706C12.9595 15.6198 11.564 16.0794 10.1487 15.9888C8.7335 15.8982 7.40794 15.2645 6.44879 14.2199C5.48964 13.1754 4.97104 11.8007 5.00125 10.3829C5.03146 8.96506 5.60814 7.61372 6.61091 6.61094C7.61368 5.60817 8.96503 5.03149 10.3828 5.00128C11.8007 4.97107 13.1753 5.48967 14.2199 6.44882C15.2645 7.40797 15.8982 8.73353 15.9888 10.1488C16.0793 11.564 15.6198 12.9595 14.706 14.044C14.7611 14.0688 14.8112 14.1033 14.854 14.146L17.854 17.146C17.9017 17.1921 17.9398 17.2473 17.966 17.3083C17.9922 17.3693 18.006 17.4349 18.0066 17.5013C18.0072 17.5677 17.9945 17.6335 17.9694 17.695C17.9442 17.7564 17.9071 17.8123 17.8602 17.8592C17.8132 17.9062 17.7574 17.9433 17.696 17.9684C17.6345 17.9936 17.5687 18.0062 17.5023 18.0056C17.4359 18.0051 17.3703 17.9913 17.3093 17.9651C17.2483 17.9389 17.1931 17.9008 17.147 17.853L14.147 14.853C14.1041 14.8106 14.0692 14.7608 14.044 14.706Z" fill="white"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="left-section4">
+          <p4>目录</p4>
+          <!-- left-section4 只能有一个ul标签-->
+          <ul><li><button data-post-id="one">one</button></li><li><button data-post-id="two">two</button></li></ul>
+        </div>
+        <div id="left-section5">
+          <span>案例</span>
+          <ul>
+            <li>demo 1</li>
+          </ul>
+        </div>
+      </div>
+      <div id="center">
+        <div id="content"><h2>ArkData 方舟数据管理</h2>
+<h3>运作机制</h3>
+<ol>
+<li>用户首选项 (Preferences) 常用于保存应用配置信息、用户偏好设置等。<ol>
+<li>数据存储</li>
+<li>数据缓存</li>
+<li>订阅通知</li>
+</ol>
+</li>
+<li>键值型数据管理 (KV-Store)  应用需要使用键值型数据库的分布式能力时，KV-Store会将同步请求发送给DatamgrService由其完成跨设备数据同步。<ol>
+<li>但版本数据库</li>
+<li>设备协同数据库</li>
+<li>订阅通知</li>
+<li>数据库加密</li>
+</ol>
+</li>
+<li>关系型数据管理 (RelationalStore) 应用需要使用关系型数据库的分布式能力时，RelationalStore部件会将同步请求发送给DatamgrService由其完成跨设备数据同步。<ol>
+<li>数据存储</li>
+<li>分类分级</li>
+<li>数据库加密</li>
+<li>分布式同步</li>
+</ol>
+</li>
+<li>分布式数据对象 (DataObject)  如果应用需要重启后仍获取之前的对象数据（包含跨设备应用和本设备应用），则使用数据管理服务（DatamgrService）的对象持久化能力，做暂时保存。<ol>
+<li>跨设备同步</li>
+<li>对象持久化</li>
+<li>订阅通知</li>
+</ol>
+</li>
+<li>跨应用数据管理 (DataShare) 提供了数据提供者provider、数据消费者consumer以及同设备跨应用数据交互的增、删、改、查以及订阅通知等能力。<ol>
+<li>查询谓词</li>
+<li>数据结果集</li>
+<li>跨应用访问助手</li>
+<li>跨应用数据共享</li>
+</ol>
+</li>
+<li>统一数据管理框架。 (UDMF) 提供了数据跨应用、跨设备交互标准，定义了跨应用、跨设备数据交互过程中的数据语言<ol>
+<li>标准化数据定义</li>
+<li>归一化数据通道</li>
+<li>跨应用数据协同</li>
+<li>跨设备数据协同</li>
+</ol>
+</li>
+</ol>
+<p><img src="img/0000000000011111111.20241119112013.1968534207210368376961520299308650001231000000280037F2CEFB2ADF10F22D78B769D258E855032118923197411496B7DA86C2796DC0.jpg" alt="img"></p>
+<ul>
+<li>数据管理服务（DatamgrService）：提供其它部件的同步及跨应用共享能力，包括RelationalStore和KV-Store跨设备同步，DataShare静默访问provider数据，暂存DataObject同步对象数据等。</li>
+</ul>
+<h3>标准化数据定义</h3>
+<p>UDMF定义了数据管理框架提供了"标准化数据定义"作为统一的HarmonyOS数据语言.</p>
+<ul>
+<li>标准化数据类型(UTD): 用于解决同一种数据类型, 存在不同类型描述方式的问题, 例如jpg/jpeg图片类型, 可以使用image/jpeg, jpg, jpeg或者image/picutre等方式进行描述.</li>
+<li>标准化数据结构: 鸿蒙为标准化数据类型提供了部分数据解构, 一般用于跨设备的数据交互, 比如拖拽. (目前只有四个标准化数据类型拥有标准画数据结构, PlainText, HyperLink, HTML, OpenHarmonyAppItem)</li>
+</ul>
+<h4>UTD 标准化数据类型基础</h4>
+<p>标准化数据类型分为物理和逻辑两类, 它们的根节点分别为<code>general.entity</code>和<code>general.object</code>. </p>
+<ul>
+<li>general.entity包含<code>file</code>,<code>directory</code>, <code>symlink</code></li>
+<li>general.object包含<code>media</code>, <code>text</code>, <code>archive</code></li>
+</ul>
+<h4>定义自定义数据类型</h4>
+<p>由于预置标准数据类型无法穷举所有数据类型, 因此支持应用自定义数据类型, 并将自定义数据类型注册到系统中.</p>
+<h5>工作原理</h5>
+<p>应用安装时,UTD会读取应用中自定义的数据类型进行安装, 并校验数据类型是否符合约束条件. 如果需要使用其他应用定义的数据类型, 需要在应用开发时一并写入自定义数据类型配置文件中.</p>
+<h5>约束限制</h5>
+<p>类型定义必须要有以下字段:</p>
+<ol>
+<li>TypeId: 由bundleName + 具体类型名组成 <code>"com.example.mySecondHap.image"</code> </li>
+<li>BelongingToTypes: 定义数据类型的归属, 确保不能形成环形依赖.</li>
+<li>FilenameExtensions: 应用自定义文件名后缀, 可以缺省, 也可以为多个, 以<code>.</code>开头</li>
+<li>MIMETypes: 应用自定义标准化数据类型所管理的web消息数据类型. 可以缺省, 可以为多个.</li>
+<li>Description: 简要描述</li>
+<li>ReferenceURL: 关于该类型的参考链接URL</li>
+</ol>
+<h5>开发步骤</h5>
+<p>直接在<code>resources\rawfile\arkdata\utd\</code>目录下新增<code>utd.json5</code>文件.</p>
+<p>在utd.json5文件中可以定义<code>UniformDataTypeDeclarations</code>数组和<code>ReferenceUniformDataTypeDeclarations</code>数组</p>
+<h3>应用数据持久化</h3>
+<p>目前有三种持久化方式:</p>
+<ol>
+<li>用户首选项 (Preferences) </li>
+<li>键值型数据库 (KV-Store)</li>
+<li>关系型数据库 (relationalStore)</li>
+</ol>
+<p>用户首选项会将数据缓存在内存中, 随着存放的数据量越多, 占用的内存越大.</p>
+<h5>开发步骤</h5>
+<p>step1: 导入preferences</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { preferences } <span class="hljs-keyword">from</span> <span class="hljs-string">"@kit.ArkData"</span>;
+</code></pre><p>step2: 获取Preferences实例</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">let</span> <span class="hljs-attr">dataPreferences</span>: preferences.<span class="hljs-property">Preferences</span> | <span class="hljs-literal">null</span> = <span class="hljs-literal">null</span>;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EntryAbility</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">UIAbility</span> {
+  <span class="hljs-title function_">onWindowStageCreate</span>(<span class="hljs-params"><span class="hljs-attr">windowStage</span>: <span class="hljs-variable language_">window</span>.windowStage</span>) {
+    <span class="hljs-keyword">let</span> <span class="hljs-attr">options</span>: preferences.<span class="hljs-property">Options</span> = { <span class="hljs-attr">name</span>: <span class="hljs-string">'myStore'</span> };
+    dataPreferences = preferences.<span class="hljs-title function_">getPreferencesSync</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>, options);
+  }
+}
+</code></pre><p>step3: 写入数据</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">if</span> (dataPreferences.<span class="hljs-title function_">hasSync</span>(<span class="hljs-string">"startup"</span>)) {
+    
+} <span class="hljs-keyword">else</span> {
+    dataPreferences.<span class="hljs-title function_">putSync</span>(<span class="hljs-string">"startup"</span>, <span class="hljs-string">"auto"</span>);
+}
+</code></pre><p>step4: 读取数据</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">let</span> val = dataPreferences.<span class="hljs-title function_">getSync</span>(<span class="hljs-string">"startup"</span>, <span class="hljs-string">"default"</span>);
+</code></pre><p>step5: 删除数据</p>
+<pre><code class="hljs language-typescript">dataPreferences.<span class="hljs-title function_">deleteSync</span>(<span class="hljs-string">"startup"</span>)
+</code></pre><p>step6: 数据持久化</p>
+<pre><code class="hljs language-typescript">dataPreferences.<span class="hljs-title function_">flush</span>(<span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">err</span>: <span class="hljs-title class_">BusinessError</span></span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err)
+        <span class="hljs-keyword">return</span> ;
+    }
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Successd in flushing"</span>)
+})
+</code></pre><p>step7: 订阅数据变更</p>
+<pre><code class="hljs language-typescript"><span class="hljs-comment">// 当flush()执行时,触发回调</span>
+<span class="hljs-keyword">let</span> <span class="hljs-title function_">observer</span> = (<span class="hljs-params"><span class="hljs-attr">key</span>: <span class="hljs-built_in">string</span></span>) =&gt; {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"the key changed."</span>)
+}
+dataPreferences.<span class="hljs-title function_">on</span>(<span class="hljs-string">"change"</span>, observer);
+dataPreferences.<span class="hljs-title function_">put</span>(<span class="hljs-string">"startup"</span>, <span class="hljs-string">"manual"</span>, <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">err</span>: <span class="hljs-title class_">BusinessError</span></span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (err) [
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);
+        <span class="hljs-keyword">return</span>;
+    ]
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"successded in putting"</span>)
+    <span class="hljs-keyword">if</span> (dataPreferences !== <span class="hljs-literal">null</span>) {
+        dataPreferences.<span class="hljs-title function_">flush</span>(<span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">err</span>: <span class="hljs-title class_">BusinessError</span></span>) =&gt;</span> {
+            <span class="hljs-keyword">if</span> (err) {
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err)
+                <span class="hljs-keyword">return</span> ;
+            }
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"sucessed in flushing"</span>)
+        })
+    }
+})
+</code></pre><p>step8: 删除指定文件</p>
+<pre><code class="hljs language-typescript"><span class="hljs-comment">// 会删除这个preference, 若是已持久化, 则也会删除对应的文件</span>
+preferences.<span class="hljs-title function_">deletePreferences</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>, option, <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">err</span>: <span class="hljs-title class_">BussinessError</span></span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"successed"</span>)
+})
+</code></pre><h5>带有特殊字符的字符串如何从首选项中写入和读取</h5>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { util } <span class="hljs-keyword">from</span> <span class="hljs-string">"@kit.ArkTS"</span>;
+<span class="hljs-comment">// 写入</span>
+<span class="hljs-keyword">let</span> uInt8Array = <span class="hljs-keyword">new</span> util.<span class="hljs-title class_">TextEncoder</span>().<span class="hljs-title function_">encodeInto</span>(<span class="hljs-string">"~！@#￥%……&amp;*（）——+？"</span>)
+dataPreferences.<span class="hljs-title function_">putSync</span>(<span class="hljs-string">'uInt8'</span>, uInt8Array);
+<span class="hljs-comment">// 读取</span>
+<span class="hljs-keyword">let</span> textDecoder = util.<span class="hljs-property">TextDecoder</span>.<span class="hljs-title function_">create</span>(<span class="hljs-string">'utf-8'</span>);
+<span class="hljs-keyword">let</span> val = textDecoder.<span class="hljs-title function_">decodeToString</span>(uInt8Array2 <span class="hljs-keyword">as</span> <span class="hljs-title class_">Uint8Array</span>);
+</code></pre></div>
+      </div>
+      <div id="right">
+        <div id="right-top">
+          <div id="right-top-header">
+            <ul>
+              <li><button>代码</button></li>
+              <li><button>总结</button></li>
+              <li><button>评论</button></li>
+            </ul>
+          </div>
+          <div id="right-top-content">
+            <code lang="javascript">const a = 123;</code>
+          </div>
+        </div>
+        <div id="right-bottom">
+          <div>bb</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./index.min.js"></script>
+  
+
+</body></html>

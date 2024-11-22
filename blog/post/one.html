@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/bundle.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="left">
+        <div id="left-section1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M3 8V7h17v1zm17 4v1H3v-1zM3 17h17v1H3z"></path>
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 7H18C18.2652 7 18.5196 7.10536 18.7071 7.29289C18.8946 7.48043 19 7.73478 19 8V16C19 16.2652 18.8946 16.5196 18.7071 16.7071C18.5196 16.8946 18.2652 17 18 17H10V7ZM9 7H6C5.73478 7 5.48043 7.10536 5.29289 7.29289C5.10536 7.48043 5 7.73478 5 8V16C5 16.2652 5.10536 16.5196 5.29289 16.7071C5.48043 16.8946 5.73478 17 6 17H9V7ZM4 8C4 7.46957 4.21071 6.96086 4.58579 6.58579C4.96086 6.21071 5.46957 6 6 6H18C18.5304 6 19.0391 6.21071 19.4142 6.58579C19.7893 6.96086 20 7.46957 20 8V16C20 16.5304 19.7893 17.0391 19.4142 17.4142C19.0391 17.7893 18.5304 18 18 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V8Z" fill="white"></path>
+          </svg>
+        </div>
+        <div id="left-section2">
+          <h4>鸿蒙文档v12 笔记</h4>
+          <span>最近更新: 2024.11.19</span>
+        </div>
+        <div id="left-section3">
+          <div class="search">
+            <input value="" placeholder="Search">
+            <button>
+              <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5C15 11.091 14.8836 11.6761 14.6574 12.2221C14.4313 12.768 14.0998 13.2641 13.682 13.682C13.2641 14.0999 12.768 14.4313 12.2221 14.6575C11.6761 14.8836 11.0909 15 10.5 15C9.90903 15 9.32387 14.8836 8.7779 14.6575C8.23194 14.4313 7.73586 14.0999 7.318 13.682C6.90013 13.2641 6.56867 12.768 6.34252 12.2221C6.11637 11.6761 5.99998 11.091 5.99998 10.5C5.99998 9.30653 6.47408 8.16194 7.318 7.31803C8.16191 6.47411 9.3065 6.00001 10.5 6.00001C11.6935 6.00001 12.838 6.47411 13.682 7.31803C14.5259 8.16194 15 9.30653 15 10.5ZM14.044 14.706C12.9595 15.6198 11.564 16.0794 10.1487 15.9888C8.7335 15.8982 7.40794 15.2645 6.44879 14.2199C5.48964 13.1754 4.97104 11.8007 5.00125 10.3829C5.03146 8.96506 5.60814 7.61372 6.61091 6.61094C7.61368 5.60817 8.96503 5.03149 10.3828 5.00128C11.8007 4.97107 13.1753 5.48967 14.2199 6.44882C15.2645 7.40797 15.8982 8.73353 15.9888 10.1488C16.0793 11.564 15.6198 12.9595 14.706 14.044C14.7611 14.0688 14.8112 14.1033 14.854 14.146L17.854 17.146C17.9017 17.1921 17.9398 17.2473 17.966 17.3083C17.9922 17.3693 18.006 17.4349 18.0066 17.5013C18.0072 17.5677 17.9945 17.6335 17.9694 17.695C17.9442 17.7564 17.9071 17.8123 17.8602 17.8592C17.8132 17.9062 17.7574 17.9433 17.696 17.9684C17.6345 17.9936 17.5687 18.0062 17.5023 18.0056C17.4359 18.0051 17.3703 17.9913 17.3093 17.9651C17.2483 17.9389 17.1931 17.9008 17.147 17.853L14.147 14.853C14.1041 14.8106 14.0692 14.7608 14.044 14.706Z" fill="white"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="left-section4">
+          <p4>目录</p4>
+          <!-- left-section4 只能有一个ul标签-->
+          <ul><li><button data-post-id="one">one</button></li></ul>
+        </div>
+        <div id="left-section5">
+          <span>案例</span>
+          <ul>
+            <li>demo 1</li>
+          </ul>
+        </div>
+      </div>
+      <div id="center">
+        <div id="content"><h1>一次开发, 多端部署</h1>
+<blockquote>
+<p>在应用开发前，开发者应尽可能全面考虑应用支持多设备的情况，避免在后期加入新的类型设备时对应用架构进行大幅调整。</p>
+</blockquote>
+<h2>"一多"是指什么?</h2>
+<p>一次开发,多端部署的简称为"一多", 指的是一套代码工程，一次开发上架，多端按需部署。</p>
+<p>它有两种部署方式:</p>
+<ul>
+<li><p>A: 编译为<strong>相同</strong>的HAP或HAP组合,适用于UX和功能相似的设备上.</p>
+</li>
+<li><p>B: 编译为<strong>不同</strong>的HAP或HAP组合,适用于UX和功能差异的设备上.</p>
+</li>
+</ul>
+<h2>鸿蒙Next中的模块有哪些?</h2>
+<p>Ability和Library两种模块类型, Ability可以打包为HAP格式, Library可以打包为HAR和HSP两种格式. HAP是可以独立安装运行的应用程序,有Entry类型和Feature类型两种HAP.而HAR是静态共享包,只能发布到OHPM私有仓库或者OHpm公共仓库.HAR的特点是代码和资源会重复拷贝. HSP是动态共享包,可以在应用内共享,HSP的特点是多模块引用HSP不会造成代码和资源的拷贝.</p>
+<h2>鸿蒙Next推荐的工程项目结构</h2>
+<p>鸿蒙文档推荐开发时采用三层项目结构</p>
+<ol>
+<li><p>common (公共能力层) 存放工具库和公共组件. 一个项目通常只有一个common模块. 它会被编译为HAR或者HSP包.</p>
+</li>
+<li><p>features (基础特性层) 这个目录内的每一个子目录都是一个feature类型的模块, feature用来存放具有独立功能的UI和业务逻辑. 它们会被编译为Feature类型的HAP包.</p>
+</li>
+<li><p>products (产品定制层) 这个目录内的每一个子目录都是一个Entry模块,每个Entry模块都是一个HAP包,作为应用主入口.</p>
+</li>
+</ol>
+<p>整个工程最终构建为一个APP包,应用以APP包的形式发布到应用市场.</p>
+<h2>依赖关系</h2>
+<p>在多模块工程下, 依赖关系通过每个模块中的<code>oh-package.json5</code>文件来修改.</p>
+<h2>页面开发的四个特点</h2>
+<h3>布局能力</h3>
+<p>自适应布局 (根据相对关系自动变化,以适应外部容器变化的布局方式)</p>
+<ul>
+<li>拉伸,均分(),占比(),缩放(),延伸(),隐藏(),折行(Flex支持折行) (七种)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>拉伸</th>
+<th>均分</th>
+<th>占比</th>
+<th>缩放</th>
+<th>延伸</th>
+<th>隐藏</th>
+<th>折行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Row</td>
+<td>Blank组件</td>
+<td>justifyContent<br>SpaceEvenly</td>
+<td>百分比或者 <br>子组件的layoutWeight</td>
+<td>aspectRatio</td>
+<td>Scroll组件</td>
+<td>displayPriority</td>
+<td>/</td>
+</tr>
+<tr>
+<td>Column</td>
+<td>Blank组件</td>
+<td>justifyContent<br>SpaceEvenly</td>
+<td>百分比或者 <br>子组件的layoutWeight</td>
+<td>aspectRatio</td>
+<td>Scroll组件</td>
+<td>displayPriority</td>
+<td>/</td>
+</tr>
+<tr>
+<td>Flex</td>
+<td>Blank组件<br>或子组件flexGrow和flexShrink属性</td>
+<td>justifyContent<br>SpaceEvenly</td>
+<td>百分比或者 <br>子组件的layoutWeight</td>
+<td>aspectRatio</td>
+<td>/</td>
+<td>displayPriority</td>
+<td>FlexWrap.Wrap</td>
+</tr>
+</tbody></table>
+<p>响应式布局 (根据断点,栅格,平方方向的变化而自动变化的布局方式)</p>
+<ul>
+<li>断点, 媒体查询, 栅格布局 (三种)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>使用方法</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GridRow</td>
+<td>配合GridCol子组件使用</td>
+<td></td>
+</tr>
+<tr>
+<td>Grid</td>
+<td>配合GridItem子组件使用, 通过改变不同断点下的rowsTemplate和columnsTemplate实现不同的布局效果</td>
+<td></td>
+</tr>
+<tr>
+<td>List</td>
+<td>需要配合ListItem子组件使用, 通过改变不同断点下的lanes等属性实现不同的布局效果</td>
+<td></td>
+</tr>
+<tr>
+<td>Swiper</td>
+<td>轮播展示子组件, 通过改变不同断点下的displayCount和indicator等属性,实现不同的布局效果</td>
+<td></td>
+</tr>
+<tr>
+<td>Tabs</td>
+<td>需要配合TabContent子组件, 通过改变不同断点下的vertical和barPosition属性, 实现不同的布局效果.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>交互归一</h3>
+<ul>
+<li>输入事件: 悬浮, 点击, 双击, 长按, 上下文菜单, 拖拽, 轻扫, 滚动及平移, 缩放, 旋转. (10种)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>悬浮</th>
+<th>点击</th>
+<th>双击</th>
+<th>长按</th>
+<th>上下文菜单</th>
+<th>拖拽</th>
+<th>轻扫</th>
+<th>滚动及平移</th>
+<th>缩放</th>
+<th>旋转</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>接口</td>
+<td>onHover</td>
+<td>onClick</td>
+<td>TapGesture</td>
+<td>LongPressGesture</td>
+<td>ContentMenu</td>
+<td>Drag</td>
+<td>SwipeGesture</td>
+<td>PanGesture</td>
+<td>PinchGesture</td>
+<td>PotationGesture</td>
+</tr>
+</tbody></table>
+<p>将A组件拖放到B组件中的过程:</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>功能和使用方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onDragStart</td>
+<td>绑定A组件, 触控屏长按/鼠标左键按下后移动两种方式触发</td>
+</tr>
+<tr>
+<td>onDragEnter</td>
+<td>绑定B组件, 触控屏手指/鼠标移动进入B组件瞬间触发</td>
+</tr>
+<tr>
+<td>onDragMove</td>
+<td>绑定B组件,触控屏手指/鼠标在B组件内移动触发</td>
+</tr>
+<tr>
+<td>onDragLeave</td>
+<td>绑定B组件,触控屏手指/鼠标移动退出B组件瞬间触发</td>
+</tr>
+<tr>
+<td>onDrop</td>
+<td>绑定B组件,在B组件内,触控屏手指抬起/鼠标左键松开时触发</td>
+</tr>
+</tbody></table>
+<h3>多态组件</h3>
+<p>鸿蒙文档暂未提供</p>
+<h3>资源使用</h3>
+<p>应用资源文件存放在每个模块的resource路径下, resource包含<code>element</code>目录和<code>media</code>目录. 其中<code>element</code>目录下存放JSON文件, 而media目录下存放媒体文件. 需要注意的是, <code>element</code>目录下的每个JSON文件都只能存放同一种类型的数据, 例如Color.json只能存放color, 其中的value只能是字符串, 而boolean.json中的value只能存放boolean类型.</p>
+<p>访问应用资源通过<code>$r("app.type.name")</code>的形式引用.</p>
+<p>系统资源是系统中预定义的资源, 通过<code>$r("sys.type.resource_id")</code>的形式引用.</p>
+<h2>功能开发的特点</h2>
+<h3>系统能力集 SysCap</h3>
+<p>SysCap是SystemCapability的缩写, 指操作系统中每个相对独立的特性. 包括蓝牙, WIFI, NFC, 摄像头等等.</p>
+<p>系统能力包括三个核心概念</p>
+<ol>
+<li><p>设备支持能力集 - 设备配置文件中配置的能力集</p>
+</li>
+<li><p>应用要求能力集 - 应用配置文件中配置的系统能力集</p>
+</li>
+<li><p>联想能力集 - IDE可以联想的系统能力集, 也在应用配置文件中配置.</p>
+</li>
+</ol>
+<blockquote>
+<p>只有当"应用要求能力集"是"设备支持能力集"的子集时, 应用才可以在该设备上分发.</p>
+</blockquote>
+<h3>动态判断支持(能力集)是否满足要求(能力集)</h3>
+<p>方法一:</p>
+<p><code>canIUse</code>接口, 例如:</p>
+<p><code>canIUse("SystemCapability.Communication.NFC.Core")</code></p>
+<p>方法二:</p>
+<p><code>import</code>的结果是否是undefine, 例如</p>
+<p><code>import&nbsp;{nfcController }&nbsp;from&nbsp;"@kit.ConnectivityKit;"</code></p>
+<h3>配置联想(能力集)来帮助开发</h3>
+<p>一般IDE会自动根据工程来配置联想能力集.</p>
+<p>手动配置则需要修改<code>syscap.json</code>文件</p>
+<h2>常见问题</h2>
+<h3>如何查询设备类型?</h3>
+<ul>
+<li>设备类型分为: <code>default</code>, <code>tablet</code>, <code>tv</code>, <code>wearable</code>, <code>2in1</code>等</li>
+</ul>
+<p>可以通过命令行的方式查询</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 方法1</span>
+hdc shell param get <span class="hljs-string">"const.product.devicetype"</span>
+<span class="hljs-comment"># 方法2</span>
+hdc shell <span class="hljs-built_in">cat</span> /etc/param/ohos.para | grep const.product.devicetype
+</code></pre><p>也可以通过代码动态查询</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { deviceInfo } <span class="hljs-keyword">from</span> <span class="hljs-string">"@kit.BasicServicesKit"</span>
+
+<span class="hljs-title function_">aboutToAppear</span>(<span class="hljs-params"></span>) {
+     <span class="hljs-variable language_">this</span>.<span class="hljs-property">deviceType</span>= deviceInfo.<span class="hljs-property">deviceType</span>
+   }
+</code></pre><h3>如何在不同设备上为Ability配置不同的启动模式</h3>
+<ul>
+<li><code>Ability</code>支持单实例,多实例,指定实例三种启动模式.</li>
+</ul>
+<p>启动模式可以在配置文件<code>module.json5</code>中通过<code>launchType</code>字段配置.</p>
+<table>
+<thead>
+<tr>
+<th>启动模式</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>multiton</td>
+<td>多实例</td>
+<td>每次startAbility都会启动一个新的实例</td>
+</tr>
+<tr>
+<td>singleton</td>
+<td>单实例</td>
+<td>系统中最多只可以存在一个实例, startAbility时, 如果系统中已存在相应的Ability实例,则复用该实例</td>
+</tr>
+<tr>
+<td>specified</td>
+<td>指定实例</td>
+<td>运行时由Ability内部业务决定是否创建多实例</td>
+</tr>
+</tbody></table>
+<p>例如在默认设备屏幕尺寸中, 屏幕尺寸较小, 采用<code>multiton</code>模式会消耗更多资源, 所以经常采用singleton模式.</p>
+<p>然而平板的屏幕尺寸较大, 可以同时存在文档编辑和网页浏览的情况, 使用<code>multiton</code>可以提升用户体验.</p>
+<p><code>launchType</code>的值为specified时, 系统会根据AbilityStage的onAcceptWant的返回值确定是否创建新的实例. 如果onAcceptWant的key已经存在, 则复用key所对应的Ability, 如果key不存在,则创建新的Ability.</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">AbilityStage</span>, <span class="hljs-title class_">Want</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"@kit.AbilityKit"</span>
+<span class="hljs-keyword">import</span> { deviceInfo } <span class="hljs-keyword">from</span> <span class="hljs-string">"@kit.BasicServicesKit"</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyAbilityStage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">AbilityStage</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-title function_">generateKey</span>(): <span class="hljs-built_in">string</span> {
+        <span class="hljs-keyword">if</span> (deviceInfo.<span class="hljs-property">deviceType</span> === <span class="hljs-string">"tablet"</span>) {
+            <span class="hljs-comment">// 用时间戳确保每次都是不同的key,确保每次都创建新的Ability实例</span>
+            <span class="hljs-keyword">return</span> deviceInfo.<span class="hljs-property">deviceType</span> + (<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>()).<span class="hljs-title function_">valueOf</span>()
+        }
+        <span class="hljs-comment">// 如果不是平板,那就返回设备类型作为key</span>
+        <span class="hljs-keyword">return</span> deviceInfo.<span class="hljs-property">deviceType</span>
+    }
+    <span class="hljs-title function_">onAcceptWant</span>(<span class="hljs-attr">want</span>: <span class="hljs-title class_">Want</span>): <span class="hljs-built_in">string</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">generateKey</span>()
+    }
+}
+</code></pre><h3>如何开启自由窗口</h3>
+<p>自由窗口功能默认是关闭的,可以通过以下方式开启自由窗口功能</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">取出窗口配置文件, 并将&lt;decor <span class="hljs-built_in">enable</span>=<span class="hljs-string">"false"</span>&gt;&lt;/decor&gt;修改为&lt;decor <span class="hljs-built_in">enable</span>=<span class="hljs-string">"true"</span>&gt;&lt;/decor&gt;</span>
+hdc file recv system /etc/window/resources/window_manager_config.xml
+<span class="hljs-meta prompt_"># </span><span class="language-bash">以可读写的模式重新挂载根目录, 并更新配置文件</span>
+hdc shell mount -o rw,remount /
+hdc file send window_manager_config.xml system/etc/windows/resources/window_manager_config.xml
+<span class="hljs-meta prompt_"># </span><span class="language-bash">重启设备, 配置生效</span>
+hdc shell reboot
+</code></pre><p>鼠标在应用顶部悬浮, 既可换出窗口工具栏</p>
+<p>点击窗口工具栏中的缩放按钮, 可以让应用以自由窗口的模式显示.</p>
+<h3>如何限制自由窗口的尺寸条件范围</h3>
+<p>可以在应用配置文件中限制各个Ability的自由窗口尺寸调节范围. </p>
+<p>比如限制最小宽度: <code>minWindowWidth</code>或者最大宽高比<code>maxWindowRatio</code> </p>
+<h3>如何获取组件的尺寸</h3>
+<p>可以通过区域组件变化事件来获取指定组件的尺寸. </p>
+<ul>
+<li>onAreaChange</li>
+</ul>
+<h3>如何解决ListItem内容过大</h3>
+<ol>
+<li><p>可以设置<code>.lanes({minLength, maxLength})</code> 限制最大最小宽度</p>
+</li>
+<li><p>可以借助<code>GridRow</code>和断点来控制<code>ListItem</code>的列数. </p>
+<p> <code>.lanes(this.breakPoint === 'sm' ? 1 : 2)</code></p>
+</li>
+</ol>
+<h3>如何解决Swiper的图片过大</h3>
+<p>配合GridRow和断点, 设置Swiper的前后边距</p>
+<ul>
+<li><code>.prevMargin(this.breakPoint === "sm"? 0: 100)</code></li>
+<li><code>.nextMargin(this.breakPoint === "sm"? 0: 100)</code></li>
+</ul>
+<h3>如何解决单张图片过大</h3>
+<p>通过设置<code>aspectRatio</code>和<code>ConstrainSize</code>属性,  限制图片的比例和尺寸.</p>
+<pre><code class="hljs language-typescript"><span class="hljs-title class_">Image</span>()
+    .<span class="hljs-title function_">aspectRatio</span>(<span class="hljs-number">0.5</span>)
+	.<span class="hljs-title function_">constraintSize</span>({ <span class="hljs-attr">maxWidth</span>: <span class="hljs-number">240</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">180</span> })
+</code></pre><h3>如何设置Grid的宽高比</h3>
+<pre><code class="hljs language-typescript"><span class="hljs-title class_">Grid</span>()
+	.<span class="hljs-title function_">aspectRatio</span>(<span class="hljs-number">1</span>)
+</code></pre></div>
+      </div>
+      <div id="right">
+        <div id="right-top">
+          <div id="right-top-header">
+            <ul>
+              <li><button>代码</button></li>
+              <li><button>总结</button></li>
+              <li><button>评论</button></li>
+            </ul>
+          </div>
+          <div id="right-top-content">
+            <code lang="javascript">const a = 123;</code>
+          </div>
+        </div>
+        <div id="right-bottom">
+          <div>bb</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./index.min.js"></script>
+  
+
+</body></html>
