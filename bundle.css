@@ -444,6 +444,9 @@ h2 {
     align-items: center;
     height: 40px;
     padding: 8px;
+    svg {
+        cursor: pointer;
+    }
 }
 #left > #left-section2 {
     height: 62px;
@@ -652,16 +655,7 @@ h2 {
         code {
             font-size: 12px;
         }
-        // 美化
-        /* white-space: pre-wrap;
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
-        overflow: auto;
-        word-break: break-all;
-        word-wrap: break-word; */
     }
-    
 }
 
 pre code.hljs {

@@ -438,12 +438,20 @@ h2 {
     display: flex;
     padding: 8px;
 }
+
 #left-section1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 40px;
     padding: 8px;
+    svg {
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    svg:hover {
+        background-color: var(--bg-dark-tertiary);
+    }
 }
 #left > #left-section2 {
     height: 62px;
@@ -453,6 +461,14 @@ h2 {
     justify-content: center;
     align-items: flex-start;
     /* padding: 16px; */
+    h4 {
+        font-weight: 500;
+    }
+    span {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--fg-dark-tertiar)
+    }
 }
 #left > #left-section3 {
     height: 36px;
@@ -460,6 +476,9 @@ h2 {
     padding-bottom: 6px;
     display: flex;
     align-items: center;
+    input {
+        font-size: 14px;
+    }
 }
 
 #left-section3 .search:hover {
@@ -495,7 +514,7 @@ h2 {
     gap: 2px;
 }
 
-#left-section4 li > button {
+#left-section4 li > a {
     padding-left: 8px;
     padding-right: 8px;
     display: flex;
@@ -507,12 +526,13 @@ h2 {
     cursor: pointer;
     display: flex;
     justify-content: start;
+    font-size: 14px;
 }
 
-#left-section4 li > button:active {
+#left-section4 li > a:active {
     background-color: var(--bg-dark-tertiary);
 }
-#left-section4 li > button:hover {
+#left-section4 li > a:hover {
     background-color: var(--bg-dark-tertiary);
 }
 
@@ -597,7 +617,7 @@ h2 {
 
 #center #content {
     padding-left: 16px;
-    padding-right: 16px
+    padding-right: 16px;
     h1 {font-size: 24px; font-weight: 600;}
     h2 {font-size: 20px; font-weight: 600;}
     h3 {font-size: 18px; font-weight: 600;}
@@ -652,16 +672,7 @@ h2 {
         code {
             font-size: 12px;
         }
-        // 美化
-        /* white-space: pre-wrap;
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
-        overflow: auto;
-        word-break: break-all;
-        word-wrap: break-word; */
     }
-    
 }
 
 pre code.hljs {
