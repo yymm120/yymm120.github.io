@@ -11,42 +11,27 @@ import path from 'node:path';
 import { Marked } from "marked";
 import { markedHighlight } from "marked-highlight";
 import hljs from "highlight.js"
+import { contentPlugin } from './contentManger';
 
 
-const MARKDOWN_DIRECTORY = "/blog/post/md";
-
-
-const marked = new Marked(
-  markedHighlight({
-	emptyLangClass: 'hljs',
-    langPrefix: 'hljs language-',
-    highlight(code, lang, info) {
-      const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-      return hljs.highlight(code, { language }).value;
-    }
-  })
-);
-
-
-
+contentPlugin();
 
 
 // ---cut-start---
 /** @type {import('rollup').RollupOptions} */
 // ---cut-end---
-const rollupConfig = {
-	input: ["blog/index.js"],
+const rollupConfig = [{
+	input: ["index.js"],
 	output: [
 		{
-			file: 'blog/index.min.js',
+			file: 'index.min.js',
 			format: 'esm',
             assetFileNames: 'assets/[name]-[hash][extname]',
 			plugins: [terser()]
 		}
 	],
 	plugins: [commonjs(), resolve(), css({output: 'bundle.css'})]
-}
-
+}]
 
 
 export default rollupConfig;

@@ -42,6 +42,7 @@ export const getContentsTree = () => {
   const root = {
     name: ".",
     dirPath: path.posix.join(CONTENT_DIRECTORY, "."),
+    relativePath: ".",
     parent: null,
     children: [],
     isDirectory: true,
@@ -64,7 +65,10 @@ export const getContentsTree = () => {
               dir !== "node_modules" &&
               !dir.endsWith(".js") &&
               !dir.endsWith(".jar") &&
-              !dir.startsWith(".")
+              !dir.startsWith(".") &&
+              !dir.startsWith("0.") &&
+              !dir.startsWith("15.") &&
+              !dir.startsWith("99.")
           )
           .map((dir) => {
             return {
@@ -78,9 +82,10 @@ export const getContentsTree = () => {
         queue.push(...temp);
         node.isDirectory = true;
       }
+      node.relativePath = parent.relativePath? parent.relativePath + "/" + node.name : parent.name? parent.name + "/" + node.name : node.name
       parent.children.push(node);
     } catch (e) {
-      console.log("路径中可能存在特殊字符", dirName, e);
+      console.log("路径中可能存在特殊字符", dirPath, e);
     }
   }
   return root;
@@ -92,66 +97,95 @@ const renderContents = (tree) => {
   );
   const htmlRoot = Parser.parse(htmlSource);
 
-  const ul = querySelector(htmlRoot, "#left-section4 ul");
+  const rootNode = querySelector(htmlRoot, "#left-section4 div");
+  // console.log("---", rootNode)
+  rootNode.childNodes.forEach(node => {
+    defaultTreeAdapter.detachNode(node)
+  });
+  rootNode.childNodes = []
 
-  const queue = [tree];
 
+  // 第一个节点需要特殊处理
+  const firstP = defaultTreeAdapter.createElement("p", html.NS.HTML, []);
+  const firstText = defaultTreeAdapter.createTextNode(`目录`);
+  defaultTreeAdapter.appendChild(firstP, firstText);
+  defaultTreeAdapter.appendChild(rootNode, firstP)
+  const ul = defaultTreeAdapter.createElement("ul", html.NS.HTML, []);
+  defaultTreeAdapter.appendChild(rootNode, ul)
+
+  const root = {...tree, parentNode: ul};
+  const queue = [root]; 
   while (queue.length > 0) {
     const node = queue.shift();
-    if (node.isDirectory && node.name.startsWith(".")) {
-      continue;
-    }
-
     if (node.isDirectory) {
       // 1) nav menu setup
       const li = defaultTreeAdapter.createElement("li", html.NS.HTML, []);
-      // index
-      const a = defaultTreeAdapter.createElement("a", html.NS.HTML, []);
-      const text = defaultTreeAdapter.createTextNode(`${node.chapter}`);
+      const p = defaultTreeAdapter.createElement("p", html.NS.HTML, []);
+      const text = defaultTreeAdapter.createTextNode(`${node.chapter === "."? "Collcetion" : node.chapter}`);
+      const nestUl = defaultTreeAdapter.createElement("ul", html.NS.HTML, [{name: "data-path", value: node.relativePath}]);
+
+      defaultTreeAdapter.appendChild(p, text)
+      defaultTreeAdapter.appendChild(li, p)
+      defaultTreeAdapter.appendChild(li, nestUl)
+      defaultTreeAdapter.appendChild(node.parentNode, li)
+      if (node.children?.length > 0) {
+        const temp = node.children.map(item => {
+          return {
+            ...item,
+            parentNode: nestUl,
+          }
+        })
+        queue.unshift(...temp);
+      }
       // 2) post chapter setup
     } else if (node.name.endsWith(".md")) {
       // 1) nav menu setup
       const li = defaultTreeAdapter.createElement("li", html.NS.HTML, []);
-      const a = defaultTreeAdapter.createElement("a", html.NS.HTML, [{ name: "href", value: `/blog/post/${node.title}.html` },]);
+      const a = defaultTreeAdapter.createElement("a", html.NS.HTML, [{ name: "href", value: `/blog/post/html/${node.relativePath.replaceAll(/\.md$/g, ".html")}` }, { name: "data-path", value: node.relativePath}]);
       const text = defaultTreeAdapter.createTextNode(`${node.title}`);
+      
       defaultTreeAdapter.appendChild(a, text);
       defaultTreeAdapter.appendChild(li, a);
-      defaultTreeAdapter.appendChild(ul, li);
+
+      defaultTreeAdapter.appendChild(node.parentNode, li);
       // 2) post chapter setup
     }
   }
 
-  // // 创建<li><a>文件名</a></li>, 然后放入ul中
-  // [...dataMap].forEach(({key}) => {
-  //     const li = defaultTreeAdapter.createElement("li", html.NS.HTML, [])
-  //     const a = defaultTreeAdapter.createElement("a", html.NS.HTML, [{ name: "href", value : `/blog/post/${key.replaceAll(".md", "")}.html`}])
-  //     const text = defaultTreeAdapter.createTextNode(`${key.replaceAll(".md", "")}`)
-  //     defaultTreeAdapter.appendChild(a, text);
-  //     defaultTreeAdapter.appendChild(li, a);
-  //     defaultTreeAdapter.appendChild(ul, li);
-  // });
+  const indexHtml = serialize(htmlRoot);
+  fs.writeFileSync(path.posix.join(__dirname, "blog", "index.html"), indexHtml);
 
-  // const rootSerializeResout = serialize(htmlRoot);
-  // fs.writeFileSync(path.posix.join(__dirname, "blog", "index.html"), rootSerializeResout);
+  const markedRoot = {...tree};
+  const markedQueue = [markedRoot];
+  while (markedQueue.length > 0) {
+    const node = markedQueue.shift();
+    if (node.isDirectory) {
+      // create dir
+      const dirpath = path.posix.join("blog/post/html", node.relativePath);
+      if (!node.name.startsWith(".")) {
+        if (!fs.existsSync(dirpath)) {
+          fs.mkdirSync(dirpath);
+        }
+      }
+      if (node.children?.length > 0) {
+        markedQueue.unshift(...node.children);
+      }
+    } else if (node.name.endsWith(".md")) {
+      // create html
+      const templateRoot = parse(indexHtml);
+      const content = queryElementById(templateRoot, "content");
+      const value = parseFragment(node.html);
+      value.childNodes.forEach((nd) => {
+        defaultTreeAdapter.appendChild(content, nd);
+      });
+      const temp = serialize(templateRoot);
+      const filepath = path.posix.join("blog/post/html", node.relativePath);
+      fs.writeFileSync(filepath.replaceAll(/\.md$/g, ".html"), temp);
+    }
+  }
 
-  // ul.childNodes = [];
-  // [...dataMap].forEach(({key, value}) => {
-  //     const fileName = key.replaceAll(".md", ".html");
-  //     // 每次循环都重新序列化一次, (深拷贝)
-  //     // const postSerializeResult = serialize(rootSerializeResout);
-  //     const postHtmlRoot = parse(rootSerializeResout);
-  //     const content = queryElementById(postHtmlRoot, "content");
-  //     const valueHtmlNode = parseFragment(value);
-  //     // console.log(postHtmlRoot.childNodes[1].childNodes[2].childNodes[1].childNodes[3].childNodes[1]); // 查看#content节点
-  //     valueHtmlNode.childNodes.forEach((node) => {
-  //         defaultTreeAdapter.appendChild(content, node);
-  //     })
-  //     const temp = serialize(postHtmlRoot);
-  //     fs.writeFileSync(path.posix.join(__dirname, "blog/post", fileName), temp);
-  // });
 };
 
-const tree = getContentsTree();
 
 const parseMarkdownContent = (tree) => {
   // TODO: 还有评论, 总结没有初始化
@@ -182,5 +216,14 @@ const parseMarkdownContent = (tree) => {
   return root;
 };
 
-const parsedTree = parseMarkdownContent(tree);
-renderContents(parsedTree);
+
+
+export const contentPlugin = () => {
+  if (fs.existsSync("blog/post/html")) {
+    fs.rmSync("blog/post/html", {force: true, recursive: true});
+  }
+  fs.mkdirSync("blog/post/html");
+  const tree = getContentsTree();
+  const parsedTree = parseMarkdownContent(tree);
+  renderContents(parsedTree); 
+}
