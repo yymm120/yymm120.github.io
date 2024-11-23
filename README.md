@@ -1,15 +1,17 @@
 # yymm120.github.io
 
-To install dependencies:
+一个纯html/css/js的前端博客项目. 没有使用任何框架.
 
-```bash
-bun install
-```
+都是一些未整理过的笔记, 这是曾经走过的路.
 
-To run:
+有时间后, 我会回过头来将它们重新梳理.
 
-```bash
-bun run index.js
-```
 
-This project was created using `bun init` in bun v1.1.26. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+### 还有很多待办事项
+
+- [ ] 图片还没有拷贝过来.
+- [ ] rollup的预编译插件逻辑抽离.
+- [ ] 代码高亮适配"Light/Dark"切换功能
+- [ ] 有时间重新梳理笔记,追加总结
+- [ ] monaco 编辑器嵌入
+- [ ] 在线代码运行(参考`rustpad`)
