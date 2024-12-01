@@ -183,7 +183,6 @@ const renderContents = (tree) => {
       fs.writeFileSync(filepath.replaceAll(/\.md$/g, ".html"), temp);
     }
   }
-
 };
 
 
